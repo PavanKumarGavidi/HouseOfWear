@@ -10,6 +10,12 @@ import { ProductDetailPage } from '../pages/ProductDetailPage';
 import { CartPage } from '../components/cart/CartPage';
 import { CheckoutPage } from '../components/checkout/CheckoutPage';
 import { OrderConfirmationPage } from '../components/checkout/OrderConfirmationPage';
+import { LoginPage } from '../components/auth/LoginPage';
+import { AccountDashboard } from '../components/account/AccountDashboard';
+import { OrderHistory } from '../components/account/OrderHistory';
+import { OrderDetail } from '../components/account/OrderDetail';
+import { WishlistPage } from '../components/account/WishlistPage';
+import { AddressBook } from '../components/account/AddressBook';
 
 // Placeholder pages
 function PlaceholderPage({ title }: { title: string }) {
@@ -41,10 +47,12 @@ export const router = createBrowserRouter([
       { path: 'cart', element: <CartPage /> },
       { path: 'checkout', element: <CheckoutPage /> },
       { path: 'order-confirmation', element: <OrderConfirmationPage /> },
-      { path: 'account', element: <PlaceholderPage title="My Account" /> },
-      { path: 'account/orders', element: <PlaceholderPage title="My Orders" /> },
-      { path: 'account/orders/:id', element: <PlaceholderPage title="Order Detail" /> },
-      { path: 'wishlist', element: <PlaceholderPage title="Wishlist" /> },
+      { path: 'login', element: <LoginPage /> },
+      { path: 'account', element: <AccountDashboard /> },
+      { path: 'account/orders', element: <OrderHistory /> },
+      { path: 'account/orders/:id', element: <OrderDetail /> },
+      { path: 'account/addresses', element: <AddressBook /> },
+      { path: 'wishlist', element: <WishlistPage /> },
       { path: 'track-order', element: <PlaceholderPage title="Track Order" /> },
       { path: 'stores', element: <PlaceholderPage title="Store Locator" /> },
       { path: 'gift-cards', element: <PlaceholderPage title="Gift Cards" /> },

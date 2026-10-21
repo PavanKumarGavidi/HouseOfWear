@@ -179,10 +179,10 @@ export interface Coupon {
 export interface Order {
   id: string;
   order_number: string;
-  user_id: string | null;
-  session_id: string | null;
-  email: string | null;
-  phone: string | null;
+  user_id?: string | null;
+  session_id?: string | null;
+  email?: string | null;
+  phone?: string | null;
   status: OrderStatus;
   subtotal: number;
   discount: number;
@@ -191,15 +191,15 @@ export interface Order {
   total: number;
   payment_method: PaymentMethod;
   payment_status: PaymentStatus;
-  razorpay_order_id: string | null;
-  razorpay_payment_id: string | null;
-  coupon_id: string | null;
-  coupon_code: string | null;
-  loyalty_points_used: number;
-  loyalty_points_earned: number;
+  razorpay_order_id?: string | null;
+  razorpay_payment_id?: string | null;
+  coupon_id?: string | null;
+  coupon_code?: string | null;
+  loyalty_points_used?: number;
+  loyalty_points_earned?: number;
   address_snapshot: AddressSnapshot;
-  notes: string | null;
-  tracking_url: string | null;
+  notes?: string | null;
+  tracking_url?: string | null;
   created_at: string;
   updated_at: string;
 }
