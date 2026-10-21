@@ -29,6 +29,20 @@ const mockUser: Profile = {
   updated_at: '2024-06-01T00:00:00Z',
 };
 
+// Mock admin user for demo
+const mockAdminUser: Profile = {
+  id: 'admin-123',
+  email: 'admin@houseofwear.com',
+  phone: '+919876543211',
+  full_name: 'Admin User',
+  avatar_url: null,
+  role: 'admin',
+  loyalty_points: 0,
+  is_active: true,
+  created_at: '2024-01-01T00:00:00Z',
+  updated_at: '2024-06-01T00:00:00Z',
+};
+
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<Profile | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -62,6 +76,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const loginWithGoogle = async () => {
     await new Promise(resolve => setTimeout(resolve, 1000));
+    // Default to customer for Google login
     const googleUser = { ...mockUser, full_name: 'Arjun Sharma' };
     setUser(googleUser);
     localStorage.setItem('how_user', JSON.stringify(googleUser));
@@ -72,10 +87,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     
     // Demo OTP is always 123456
     if (otp === '123456') {
+      const email = pendingLogin?.type === 'email' ? pendingLogin.value : mockUser.email;
+      const phone = pendingLogin?.type === 'phone' ? `+91${pendingLogin.value}` : mockUser.phone;
+      
+      // Check if admin email
+      const isAdmin = email === 'admin@houseofwear.com';
+      const baseUser = isAdmin ? mockAdminUser : mockUser;
+      
       const newUser = {
-        ...mockUser,
-        email: pendingLogin?.type === 'email' ? pendingLogin.value : mockUser.email,
-        phone: pendingLogin?.type === 'phone' ? `+91${pendingLogin.value}` : mockUser.phone,
+        ...baseUser,
+        email,
+        phone,
       };
       setUser(newUser);
       localStorage.setItem('how_user', JSON.stringify(newUser));

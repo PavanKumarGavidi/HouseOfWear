@@ -16,6 +16,12 @@ import { OrderHistory } from '../components/account/OrderHistory';
 import { OrderDetail } from '../components/account/OrderDetail';
 import { WishlistPage } from '../components/account/WishlistPage';
 import { AddressBook } from '../components/account/AddressBook';
+import { AdminLayout } from '../components/admin/AdminLayout';
+import { AdminDashboard } from '../components/admin/AdminDashboard';
+import { AdminProducts } from '../components/admin/AdminProducts';
+import { AdminOrders } from '../components/admin/AdminOrders';
+import { AdminCustomers } from '../components/admin/AdminCustomers';
+import { AdminCoupons } from '../components/admin/AdminCoupons';
 
 // Placeholder pages
 function PlaceholderPage({ title }: { title: string }) {
@@ -63,8 +69,20 @@ export const router = createBrowserRouter([
       { path: 'terms', element: <PlaceholderPage title="Terms of Service" /> },
       { path: 'privacy', element: <PlaceholderPage title="Privacy Policy" /> },
       { path: 'careers', element: <PlaceholderPage title="Careers" /> },
-      { path: 'admin', element: <PlaceholderPage title="Admin Dashboard" /> },
       { path: '*', element: <PlaceholderPage title="404 - Page Not Found" /> },
+    ],
+  },
+  {
+    path: '/admin',
+    element: <AdminLayout />,
+    children: [
+      { index: true, element: <AdminDashboard /> },
+      { path: 'products', element: <AdminProducts /> },
+      { path: 'orders', element: <AdminOrders /> },
+      { path: 'customers', element: <AdminCustomers /> },
+      { path: 'coupons', element: <AdminCoupons /> },
+      { path: 'analytics', element: <PlaceholderPage title="Analytics" /> },
+      { path: 'settings', element: <PlaceholderPage title="Settings" /> },
     ],
   },
 ]);
