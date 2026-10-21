@@ -92,10 +92,10 @@ export interface Product {
   id: string;
   name: string;
   slug: string;
-  description: string | null;
-  fabric_care: string | null;
+  description?: string | null;
+  fabric_care?: string | null;
   section_id: string;
-  category_id: string | null;
+  category_id?: string | null;
   base_price: number;
   mrp: number;
   discount_percent: number;
@@ -103,9 +103,9 @@ export interface Product {
   is_active: boolean;
   is_bestseller: boolean;
   is_new_arrival: boolean;
-  gender: GenderType;
-  fit: string | null;
-  occasion: string | null;
+  gender?: GenderType;
+  fit?: string | null;
+  occasion?: string | null;
   created_at: string;
   updated_at: string;
 }
