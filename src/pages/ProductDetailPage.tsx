@@ -11,6 +11,9 @@ import { ProductTabs } from '../components/pdp/ProductTabs';
 import { StickyAddToBag } from '../components/pdp/StickyAddToBag';
 import { SizeGuideModal } from '../components/pdp/SizeGuideModal';
 import { RelatedProducts } from '../components/pdp/RelatedProducts';
+import { ReviewsSection } from '../components/pdp/ReviewsSection';
+import { Recommendations } from '../components/pdp/Recommendations';
+import { BackInStockNotify } from '../components/pdp/BackInStockNotify';
 import { useCartStore, useWishlistStore } from '../stores';
 import { twMerge } from '../utils/cn';
 import type { ProductWithDetails } from '../types/database';
@@ -329,6 +332,19 @@ export function ProductDetailPage() {
 
         {/* Related Products */}
         <RelatedProducts title="Complete the Look" products={mockRelatedProducts} />
+
+        {/* Back in Stock Notification */}
+        {!inStock && (
+          <div className="mt-8">
+            <BackInStockNotify productName={product.name} variantId={currentVariant?.id || ''} />
+          </div>
+        )}
+
+        {/* Reviews Section */}
+        <ReviewsSection productId={product.id} avgRating={4.5} reviewCount={224} />
+
+        {/* Recommendations */}
+        <Recommendations title="You May Also Like" products={mockRelatedProducts.slice(0, 4)} />
       </div>
 
       {/* Sticky Add to Bag (Mobile) */}

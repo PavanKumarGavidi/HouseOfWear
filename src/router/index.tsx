@@ -22,6 +22,7 @@ import { AdminProducts } from '../components/admin/AdminProducts';
 import { AdminOrders } from '../components/admin/AdminOrders';
 import { AdminCustomers } from '../components/admin/AdminCustomers';
 import { AdminCoupons } from '../components/admin/AdminCoupons';
+import { GiftCardsPage } from '../pages/GiftCardsPage';
 
 // Placeholder pages
 function PlaceholderPage({ title }: { title: string }) {
@@ -61,7 +62,7 @@ export const router = createBrowserRouter([
       { path: 'wishlist', element: <WishlistPage /> },
       { path: 'track-order', element: <PlaceholderPage title="Track Order" /> },
       { path: 'stores', element: <PlaceholderPage title="Store Locator" /> },
-      { path: 'gift-cards', element: <PlaceholderPage title="Gift Cards" /> },
+      { path: 'gift-cards', element: <GiftCardsPage /> },
       { path: 'about', element: <PlaceholderPage title="About Us" /> },
       { path: 'help', element: <PlaceholderPage title="Help & FAQ" /> },
       { path: 'contact', element: <PlaceholderPage title="Contact Us" /> },
