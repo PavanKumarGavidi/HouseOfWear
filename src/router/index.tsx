@@ -7,6 +7,9 @@ import { KidsLanding } from '../pages/KidsLanding';
 import { ShoesLanding } from '../pages/ShoesLanding';
 import { ProductListingPage } from '../pages/ProductListingPage';
 import { ProductDetailPage } from '../pages/ProductDetailPage';
+import { CartPage } from '../components/cart/CartPage';
+import { CheckoutPage } from '../components/checkout/CheckoutPage';
+import { OrderConfirmationPage } from '../components/checkout/OrderConfirmationPage';
 
 // Placeholder pages
 function PlaceholderPage({ title }: { title: string }) {
@@ -34,10 +37,10 @@ export const router = createBrowserRouter([
       { path: 'collections/:section', element: <ProductListingPage /> },
       { path: 'collections/:section/:category', element: <ProductListingPage /> },
       { path: 'products/:slug', element: <ProductDetailPage /> },
-      { path: 'products/:slug', element: <PlaceholderPage title="Product Detail" /> },
       { path: 'search', element: <PlaceholderPage title="Search" /> },
-      { path: 'cart', element: <PlaceholderPage title="Shopping Bag" /> },
-      { path: 'checkout', element: <PlaceholderPage title="Checkout" /> },
+      { path: 'cart', element: <CartPage /> },
+      { path: 'checkout', element: <CheckoutPage /> },
+      { path: 'order-confirmation', element: <OrderConfirmationPage /> },
       { path: 'account', element: <PlaceholderPage title="My Account" /> },
       { path: 'account/orders', element: <PlaceholderPage title="My Orders" /> },
       { path: 'account/orders/:id', element: <PlaceholderPage title="Order Detail" /> },
