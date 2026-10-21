@@ -23,6 +23,7 @@ import { AdminOrders } from '../components/admin/AdminOrders';
 import { AdminCustomers } from '../components/admin/AdminCustomers';
 import { AdminCoupons } from '../components/admin/AdminCoupons';
 import { GiftCardsPage } from '../pages/GiftCardsPage';
+import { NotFoundPage } from '../pages/NotFoundPage';
 
 // Placeholder pages
 function PlaceholderPage({ title }: { title: string }) {
@@ -70,7 +71,7 @@ export const router = createHashRouter([
       { path: 'terms', element: <PlaceholderPage title="Terms of Service" /> },
       { path: 'privacy', element: <PlaceholderPage title="Privacy Policy" /> },
       { path: 'careers', element: <PlaceholderPage title="Careers" /> },
-      { path: '*', element: <PlaceholderPage title="404 - Page Not Found" /> },
+      { path: '*', element: <NotFoundPage /> },
     ],
   },
   {

@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://houseofwear.com/sitemap.xml
+
+# Disallow admin and private routes
+Disallow: /admin
+Disallow: /account
+Disallow: /checkout
+Disallow: /cart
+Disallow: /api
+
+# Allow product and collection pages
+Allow: /collections
+Allow: /products
+Allow: /gift-cards
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
