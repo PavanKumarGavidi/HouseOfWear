@@ -5,6 +5,7 @@ import { MenLanding } from '../pages/MenLanding';
 import { WomenLanding } from '../pages/WomenLanding';
 import { KidsLanding } from '../pages/KidsLanding';
 import { ShoesLanding } from '../pages/ShoesLanding';
+import { ProductListingPage } from '../pages/ProductListingPage';
 
 // Placeholder pages
 function PlaceholderPage({ title }: { title: string }) {
@@ -29,8 +30,8 @@ export const router = createBrowserRouter([
       { path: 'collections/women', element: <WomenLanding /> },
       { path: 'collections/kids', element: <KidsLanding /> },
       { path: 'collections/shoes', element: <ShoesLanding /> },
-      { path: 'collections/:section', element: <PlaceholderPage title="Collection" /> },
-      { path: 'collections/:section/:category', element: <PlaceholderPage title="Category" /> },
+      { path: 'collections/:section', element: <ProductListingPage /> },
+      { path: 'collections/:section/:category', element: <ProductListingPage /> },
       { path: 'products/:slug', element: <PlaceholderPage title="Product Detail" /> },
       { path: 'search', element: <PlaceholderPage title="Search" /> },
       { path: 'cart', element: <PlaceholderPage title="Shopping Bag" /> },
