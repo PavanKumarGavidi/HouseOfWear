@@ -6,6 +6,7 @@ import { WomenLanding } from '../pages/WomenLanding';
 import { KidsLanding } from '../pages/KidsLanding';
 import { ShoesLanding } from '../pages/ShoesLanding';
 import { ProductListingPage } from '../pages/ProductListingPage';
+import { ProductDetailPage } from '../pages/ProductDetailPage';
 
 // Placeholder pages
 function PlaceholderPage({ title }: { title: string }) {
@@ -32,6 +33,7 @@ export const router = createBrowserRouter([
       { path: 'collections/shoes', element: <ShoesLanding /> },
       { path: 'collections/:section', element: <ProductListingPage /> },
       { path: 'collections/:section/:category', element: <ProductListingPage /> },
+      { path: 'products/:slug', element: <ProductDetailPage /> },
       { path: 'products/:slug', element: <PlaceholderPage title="Product Detail" /> },
       { path: 'search', element: <PlaceholderPage title="Search" /> },
       { path: 'cart', element: <PlaceholderPage title="Shopping Bag" /> },

@@ -112,28 +112,29 @@ export interface Product {
 
 export interface ProductVariant {
   id: string;
-  product_id: string;
-  sku: string;
+  product_id?: string;
+  sku?: string;
   size: string;
   color: string;
   color_hex: string | null;
   stock: number;
-  price_override: number | null;
-  is_active: boolean;
-  created_at: string;
-  updated_at: string;
+  price_override?: number | null;
+  is_active?: boolean;
+  created_at?: string;
+  updated_at?: string;
 }
 
 export interface ProductImage {
   id: string;
-  product_id: string;
-  variant_id: string | null;
+  product_id?: string;
+  variant_id?: string | null;
   url: string;
-  alt_text: string | null;
-  sort_order: number;
+  alt_text?: string | null;
+  alt?: string;
+  sort_order?: number;
   is_primary: boolean;
-  media_type: 'image' | 'video';
-  created_at: string;
+  media_type?: 'image' | 'video';
+  created_at?: string;
 }
 
 export interface Cart {
