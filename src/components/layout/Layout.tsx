@@ -4,6 +4,7 @@ import { Footer } from './Footer';
 import { MobileDrawer } from './MobileDrawer';
 import { BottomTabBar } from './BottomTabBar';
 import { CartDrawer } from './CartDrawer';
+import { AnnouncementBar } from '../home/AnnouncementBar';
 import { useUIStore } from '../../stores';
 import { useEffect } from 'react';
 
@@ -21,6 +22,7 @@ export function Layout() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <AnnouncementBar />
       <Header />
       <MobileDrawer />
       <CartDrawer />

@@ -1,6 +1,10 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { Layout } from '../components/layout/Layout';
 import { HomePage } from '../pages/HomePage';
+import { MenLanding } from '../pages/MenLanding';
+import { WomenLanding } from '../pages/WomenLanding';
+import { KidsLanding } from '../pages/KidsLanding';
+import { ShoesLanding } from '../pages/ShoesLanding';
 
 // Placeholder pages
 function PlaceholderPage({ title }: { title: string }) {
@@ -21,6 +25,10 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> },
       { path: 'collections', element: <PlaceholderPage title="All Collections" /> },
+      { path: 'collections/men', element: <MenLanding /> },
+      { path: 'collections/women', element: <WomenLanding /> },
+      { path: 'collections/kids', element: <KidsLanding /> },
+      { path: 'collections/shoes', element: <ShoesLanding /> },
       { path: 'collections/:section', element: <PlaceholderPage title="Collection" /> },
       { path: 'collections/:section/:category', element: <PlaceholderPage title="Category" /> },
       { path: 'products/:slug', element: <PlaceholderPage title="Product Detail" /> },
